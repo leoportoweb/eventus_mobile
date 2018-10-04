@@ -6,7 +6,7 @@
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content padding class="content">
   <!--<h3>Ionic Menu Starter</h3>
 
   <p>
@@ -17,62 +17,59 @@
   <!--
     chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
   -->
-  <ion-content class="card-background-page">
-    <ion-list>
-      <ion-item>
-        <ion-label floating>CEP</ion-label>
-        <ion-input type="number" [(ngModel)]="cepDigitado"></ion-input>
-      </ion-item>
-      <ion-item>
-        <button ion-button icon-start (click)="buscarEndereco()">
-          <ion-icon ios="ios-search" md="md-search"></ion-icon>
-          Consultar
-        </button>
-      </ion-item>
-      <p *ngIf="response">
-        CEP: {{response.cep}}
-        <br />
-        Logradouro: {{response.logradouro}}
-      </p>
-    </ion-list>
 
-    <button ion-button icon-start block (click)="cadastrarEstudante()">
-      <ion-icon ios="ios-search" md="md-search"></ion-icon>
-      Cadastrar Estudantes
-    </button>
+  <ion-item style="padding: 0;">
+    <ion-label floating>CEP</ion-label>
+    <ion-input type="number" [(ngModel)]="cepDigitado"></ion-input>
+  </ion-item>
 
-    <button ion-button icon-start block (click)="buscarEstudantes()">
-      <ion-icon ios="ios-search" md="md-search"></ion-icon>
-      Buscar Estudantes
-    </button>
+  <button ion-button block icon-start (click)="buscarEndereco()">
+    <ion-icon ios="ios-search" md="md-search"></ion-icon>
+    Consultar
+  </button>
 
-    <ion-list>
-      <ion-card *ngFor="let estudante of estudantes">
-        <img src="assets/imgs/card-saopaolo.png" />
-        <div class="card-title">{{estudante.FirstName}}</div>
-        <div class="card-subtitle">{{estudante.LastName}}</div>
-      </ion-card>
-    </ion-list>
+  <p *ngIf="response">
+    CEP: {{response.cep}}
+    <br />
+    Logradouro: {{response.logradouro}}
+  </p>
 
-    <ion-card>
+  <button ion-button icon-start block (click)="cadastrarEstudante()">
+    <ion-icon ios="ios-search" md="md-search"></ion-icon>
+    Cadastrar Estudantes
+  </button>
+
+  <button ion-button icon-start block (click)="buscarEstudantes()">
+    <ion-icon ios="ios-search" md="md-search"></ion-icon>
+    Buscar Estudantes
+  </button>
+
+  <ion-list>
+    <ion-card *ngFor="let estudante of estudantes">
       <img src="assets/imgs/card-saopaolo.png" />
-      <div class="card-title">São Paulo</div>
-      <div class="card-subtitle">41 Listings</div>
+      <div class="card-title">{{estudante.FirstName}}</div>
+      <div class="card-subtitle">{{estudante.LastName}}</div>
     </ion-card>
-    <ion-card>
-      <img src="assets/imgs/card-amsterdam.png" />
-      <div class="card-title">Amsterdam</div>
-      <div class="card-subtitle">64 Listings</div>
-    </ion-card>
-    <ion-card>
-      <img src="assets/imgs/card-sf.png" />
-      <div class="card-title">San Francisco</div>
-      <div class="card-subtitle">72 Listings</div>
-    </ion-card>
-    <ion-card>
-      <img src="assets/imgs/card-madison.png" />
-      <div class="card-title">Madison</div>
-      <div class="card-subtitle">28 Listings</div>
-    </ion-card>
-  </ion-content>
+  </ion-list>
+
+  <ion-card>
+    <img src="assets/imgs/card-saopaolo.png" />
+    <div class="card-title">São Paulo</div>
+    <div class="card-subtitle">41 Listings</div>
+  </ion-card>
+  <ion-card>
+    <img src="assets/imgs/card-amsterdam.png" />
+    <div class="card-title">Amsterdam</div>
+    <div class="card-subtitle">64 Listings</div>
+  </ion-card>
+  <ion-card>
+    <img src="assets/imgs/card-sf.png" />
+    <div class="card-title">San Francisco</div>
+    <div class="card-subtitle">72 Listings</div>
+  </ion-card>
+  <ion-card>
+    <img src="assets/imgs/card-madison.png" />
+    <div class="card-title">Madison</div>
+    <div class="card-subtitle">28 Listings</div>
+  </ion-card>
 </ion-content>
