@@ -11,8 +11,8 @@ export class EventoProvider {
 
   }
 
-  listarEndereco(cep: number) {
-    let url = "https://viacep.com.br/ws/" + cep + "/json/";
+  listarEventos() {
+    let url = "http://localhost:57443/api/evento/";
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     //headers.append('Authorization', 'Bearer ' + localStorage.getItem('alertaBrasil'));
@@ -20,8 +20,8 @@ export class EventoProvider {
     return this.http.get(url, { headers: headers }).toPromise();
   }
 
-  listarEstudantes() {
-    let url = "http://localhost:57443/api/students/";
+  listarEndereco(cep: number) {
+    let url = "https://viacep.com.br/ws/" + cep + "/json/";
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     //headers.append('Authorization', 'Bearer ' + localStorage.getItem('alertaBrasil'));

@@ -9,12 +9,26 @@ import { EventoProvider } from '../../providers/evento/evento';
 export class HomePage {
 
   cepDigitado: number;
-  response: any;
 
-  estudantes: any;
+  response: any;
+  eventos: any;
 
   constructor(public navCtrl: NavController, private eventoProvider: EventoProvider) {
 
+  }
+
+  ionViewDidLoad() {
+    this.eventoProvider.listarEventos().then((response) => {
+      this.eventos = response.json();
+      console.log(this.eventos);
+      //console.log(this.estudantes[0].FirstName);
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  consultarEvento(cod_evento_eve: number) {
+    console.log(cod_evento_eve);
   }
 
   buscarEndereco() {
@@ -26,19 +40,7 @@ export class HomePage {
       console.log(err);
     });
   }
-
-  buscarEstudantes() {
-
-    this.eventoProvider.listarEstudantes().then((response) => {
-      //this.response = JSON.stringify(response);
-      this.estudantes = response.json();
-      console.log(this.estudantes);
-      console.log(this.estudantes[0].FirstName);
-    }).catch((err) => {
-      console.log(err);
-    });
-  }
-
+  
   cadastrarEstudante() {
 
     let postData = {

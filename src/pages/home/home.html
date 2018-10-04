@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="header">
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -6,18 +6,30 @@
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
+
 <ion-content padding class="content">
-  <!--<h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <ion-list>
+    <ion-card *ngFor="let evento of eventos" (click)="consultarEvento(evento.cod_evento_eve)">
+      <img src="assets/imgs/card-amsterdam.png" />
+      <div class="card-format" style="padding: 0px 5px 0px 5px;">
+        <span class="card-format-title">
+          {{evento.des_evento_eve}}
+        </span>
+        <br />
+        <span class="card-format-subtitle">
+          {{evento.des_cidade_eve}}/{{evento.sgl_uf_eve}}
+        </span>
+        <br />
+        <span class="card-format-subtitle">
+          {{evento.dat_evento_eve | date:'dd/MM/yyyy'}} até 
+          {{evento.dat_evento_fim_eve | date:'dd/MM/yyyy'}}
+        </span>
+      </div>
+    </ion-card>
+  </ion-list>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>-->
   <!--
-    chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
-  -->
-
   <ion-item style="padding: 0;">
     <ion-label floating>CEP</ion-label>
     <ion-input type="number" [(ngModel)]="cepDigitado"></ion-input>
@@ -39,19 +51,6 @@
     Cadastrar Estudantes
   </button>
 
-  <button ion-button icon-start block (click)="buscarEstudantes()">
-    <ion-icon ios="ios-search" md="md-search"></ion-icon>
-    Buscar Estudantes
-  </button>
-
-  <ion-list>
-    <ion-card *ngFor="let estudante of estudantes">
-      <img src="assets/imgs/card-saopaolo.png" />
-      <div class="card-title">{{estudante.FirstName}}</div>
-      <div class="card-subtitle">{{estudante.LastName}}</div>
-    </ion-card>
-  </ion-list>
-
   <ion-card>
     <img src="assets/imgs/card-saopaolo.png" />
     <div class="card-title">São Paulo</div>
@@ -72,4 +71,6 @@
     <div class="card-title">Madison</div>
     <div class="card-subtitle">28 Listings</div>
   </ion-card>
+  -->
+
 </ion-content>

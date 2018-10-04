@@ -3,12 +3,12 @@ page-home {
   ion-card {
     position: relative;
     text-align: center;
+    cursor: pointer;
   }
 
-  .card-title {
+  .card-format {
     position: absolute;
-    top: 36%;
-    font-size: 2.0em;
+    top: 25%;
     width: 100%;
     font-weight: bold;
     color: #fff;
@@ -20,5 +20,13 @@ page-home {
     top: 52%;
     width: 100%;
     color: #fff;
+  }
+
+  .card-format-title {
+    font-size: 2.0em;
+  }
+
+  .card-format-subtitle {
+    font-size: 1.0em;
   }
 }
