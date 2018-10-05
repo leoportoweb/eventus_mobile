@@ -18,6 +18,7 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
+    this.saveLocalInitialVariable();
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -40,5 +41,9 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  saveLocalInitialVariable() {
+    localStorage.setItem("urlAPI","http://localhost:57443");
   }
 }

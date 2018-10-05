@@ -9,20 +9,24 @@
 
 <ion-content padding class="content">
 
+  <p *ngIf="teste">
+    Teste: {{teste}}
+  </p>
+
   <ion-list>
     <ion-card *ngFor="let evento of eventos" (click)="consultarEvento(evento.cod_evento_eve)">
-      <img src="assets/imgs/card-amsterdam.png" />
+      <img src="assets/imgs/card-amsterdam.png"/>
       <div class="card-format" style="padding: 0px 5px 0px 5px;">
         <span class="card-format-title">
           {{evento.des_evento_eve}}
         </span>
-        <br />
+        <br/>
         <span class="card-format-subtitle">
           {{evento.des_cidade_eve}}/{{evento.sgl_uf_eve}}
         </span>
-        <br />
+        <br/>
         <span class="card-format-subtitle">
-          {{evento.dat_evento_eve | date:'dd/MM/yyyy'}} até 
+          {{evento.dat_evento_eve | date:'dd/MM/yyyy'}} até
           {{evento.dat_evento_fim_eve | date:'dd/MM/yyyy'}}
         </span>
       </div>
