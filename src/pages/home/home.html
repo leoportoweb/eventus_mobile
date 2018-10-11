@@ -3,34 +3,88 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Eventus System</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="content">
 
+  <!--
   <p *ngIf="teste">
     Teste: {{teste}}
   </p>
+  -->
 
   <ion-list>
+
+    <ion-card *ngFor="let evento of eventos">
+
+      <!--
+      <ion-item class="card-format-title">
+        <ion-avatar item-start>
+          <img src="https://evesix.insix.com.br/img/evento/{{evento.cod_evento_eve}}.jpg">
+        </ion-avatar>
+        <h2>{{evento.des_evento_eve}}</h2>
+      </ion-item>
+      -->
+
+      <ion-card-content class="card-format-title">
+        <h2>
+          {{evento.des_evento_eve}}
+        </h2>
+      </ion-card-content>
+
+      <img src="assets/imgs/card-amsterdam.png" />
+
+      <ion-card-content class="card-format-content">
+        <p>
+          <span style="font-size: smaller; color: #a3a3a3;">Local:</span>
+          <br />
+          {{evento.des_cidade_eve}}/{{evento.sgl_uf_eve}}
+          <br />
+          <span style="font-size: smaller; color: #a3a3a3;">Período:</span>
+          <br />
+          {{evento.dat_evento_eve | date:'dd/MM/yyyy'}} até
+          {{evento.dat_evento_fim_eve | date:'dd/MM/yyyy'}}
+        </p>
+      </ion-card-content>
+
+      <ion-row class="card-format-footer">
+        <ion-col>
+          <button ion-button icon-start clear small (click)="irParaInscricao(evento.cod_evento_eve)">
+            <ion-icon name="laptop"></ion-icon>
+            <div>Inscrição</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-start clear small (click)="irParaAcessoRestrito(evento.cod_evento_eve)">
+            <ion-icon name="lock"></ion-icon>
+            <div>Acesso Restrito</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+
+    <!--
     <ion-card *ngFor="let evento of eventos" (click)="consultarEvento(evento.cod_evento_eve)">
-      <img src="assets/imgs/card-amsterdam.png"/>
+      <img src="assets/imgs/card-amsterdam.png" />
       <div class="card-format" style="padding: 0px 5px 0px 5px;">
         <span class="card-format-title">
           {{evento.des_evento_eve}}
         </span>
-        <br/>
+        <br />
         <span class="card-format-subtitle">
           {{evento.des_cidade_eve}}/{{evento.sgl_uf_eve}}
         </span>
-        <br/>
+        <br />
         <span class="card-format-subtitle">
           {{evento.dat_evento_eve | date:'dd/MM/yyyy'}} até
           {{evento.dat_evento_fim_eve | date:'dd/MM/yyyy'}}
         </span>
       </div>
     </ion-card>
+        -->
   </ion-list>
 
   <!--

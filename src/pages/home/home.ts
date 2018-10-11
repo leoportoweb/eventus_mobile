@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { EventoProvider } from '../../providers/evento/evento';
 import { Util } from '../../app/util';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -38,8 +39,14 @@ export class HomePage {
     this.loading.dismiss();
   }
 
-  consultarEvento(cod_evento_eve: number) {
-    console.log(cod_evento_eve);
+  irParaInscricao(cod_evento_eve: number) {
+    //console.log(cod_evento_eve);
+  }
+
+  irParaAcessoRestrito(cod_evento_eve: number) {
+    //console.log(cod_evento_eve);
+    localStorage.setItem("cod_evento_eve", cod_evento_eve.toString());
+    this.navCtrl.push(LoginPage);
   }
 
   buscarEndereco() {

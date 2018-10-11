@@ -1,4 +1,4 @@
-export static class Util {
+export class Util {
 
   static gerarChaveAPI(dest: string): string {
 
