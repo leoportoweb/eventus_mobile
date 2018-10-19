@@ -12,21 +12,31 @@ export class EventoProvider {
 
   }
 
-  listarEndereco(cep: number) {
-    let url = "https://viacep.com.br/ws/" + cep + "/json/";
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    //headers.append('Authorization', 'Bearer ' + localStorage.getItem('alertaBrasil'));
-
-    return this.http.get(url, { headers: headers }).toPromise();
-  }
-
   listarEventos() {
     let url = localStorage.getItem("urlAPI") + "/api/evento";
     let key = Util.gerarChaveAPI("/api/evento");
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', 'Bearer ' + key);
+
+    return this.http.get(url, { headers: headers }).toPromise();
+  }
+
+  consultarEvento(cod_evento_eve: string) {
+    let url = localStorage.getItem("urlAPI") + "/api/evento/" + cod_evento_eve;
+    let key = Util.gerarChaveAPI("/api/evento");
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', 'Bearer ' + key);
+
+    return this.http.get(url, { headers: headers }).toPromise();
+  }
+
+  listarEndereco(cep: number) {
+    let url = "https://viacep.com.br/ws/" + cep + "/json/";
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    //headers.append('Authorization', 'Bearer ' + localStorage.getItem('alertaBrasil'));
 
     return this.http.get(url, { headers: headers }).toPromise();
   }

@@ -3,6 +3,7 @@ import { NavController, LoadingController } from 'ionic-angular';
 import { EventoProvider } from '../../providers/evento/evento';
 import { Util } from '../../app/util';
 import { LoginPage } from '../login/login';
+import { ValoresPage } from '../valores/valores';
 
 @Component({
   selector: 'page-home',
@@ -24,13 +25,13 @@ export class HomePage {
     });
     this.loading.present();
 
-    this.teste = Util.gerarChaveAPI("/api/evento");
+    //this.teste = Util.gerarChaveAPI("/api/evento");
   }
 
   ionViewDidLoad() {
     this.eventoProvider.listarEventos().then((response) => {
       this.eventos = response.json();
-      console.log(this.eventos);
+      //console.log(this.eventos);
       //console.log(this.estudantes[0].FirstName);
     }).catch((err) => {
       console.log(err);
@@ -41,6 +42,8 @@ export class HomePage {
 
   irParaInscricao(cod_evento_eve: number) {
     //console.log(cod_evento_eve);
+    localStorage.setItem("cod_evento_eve", cod_evento_eve.toString());
+    this.navCtrl.push(ValoresPage);
   }
 
   irParaAcessoRestrito(cod_evento_eve: number) {
@@ -58,7 +61,8 @@ export class HomePage {
       console.log(err);
     });
   }
-  
+
+  /*
   cadastrarEstudante() {
 
     let postData = {
@@ -75,5 +79,5 @@ export class HomePage {
       console.log(err);
     });
   }
-
+  */
 }

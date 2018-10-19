@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { ValoresPage } from '../pages/valores/valores';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,8 +14,8 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  //rootPage: any = HomePage;
-  rootPage: any = LoginPage;
+  rootPage: any = HomePage;
+  //rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -49,6 +50,7 @@ export class MyApp {
   }
 
   saveLocalInitialVariable() {
-    localStorage.setItem("urlAPI","http://localhost:57443");
+    //localStorage.setItem("urlAPI", "http://localhost:57443");
+    localStorage.setItem("urlAPI", "https://evesix.insix.com.br");
   }
 }

@@ -20,13 +20,13 @@
     <ion-card *ngFor="let evento of eventos">
 
       <!--
-      <ion-item class="card-format-title">
-        <ion-avatar item-start>
-          <img src="https://evesix.insix.com.br/img/evento/{{evento.cod_evento_eve}}.jpg">
-        </ion-avatar>
-        <h2>{{evento.des_evento_eve}}</h2>
-      </ion-item>
-      -->
+  <ion-item class="card-format-title">
+    <ion-avatar item-start>
+      <img src="https://evesix.insix.com.br/img/evento/{{evento.cod_evento_eve}}.jpg">
+    </ion-avatar>
+    <h2>{{evento.des_evento_eve}}</h2>
+  </ion-item>
+  -->
 
       <ion-card-content class="card-format-title">
         <h2>
@@ -34,7 +34,10 @@
         </h2>
       </ion-card-content>
 
-      <img src="assets/imgs/card-amsterdam.png" />
+      <!--
+      <img src="https://evesix.insix.com.br/img/evento/card-{{evento.cod_evento_eve}}.png" />
+      -->
+      <img src="https://evesix.insix.com.br/img/evento/{{evento.nom_img_card}}" />
 
       <ion-card-content class="card-format-content">
         <p>
