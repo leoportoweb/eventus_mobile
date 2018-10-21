@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Util } from '../../app/util';
-
-import { Headers, Http, Response } from '@angular/http';
+import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()

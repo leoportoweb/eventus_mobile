@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { EventoProvider } from '../../providers/evento/evento';
-import { Util } from '../../app/util';
+//import { Util } from '../../app/util';
 import { LoginPage } from '../login/login';
 import { ValoresPage } from '../valores/valores';
 
