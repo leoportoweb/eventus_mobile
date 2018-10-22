@@ -52,6 +52,7 @@ export class HomePage {
     this.navCtrl.push(LoginPage);
   }
 
+  /*
   buscarEndereco() {
     this.eventoProvider.listarEndereco(this.cepDigitado).then((response) => {
       //this.response = JSON.stringify(response);
@@ -61,6 +62,7 @@ export class HomePage {
       console.log(err);
     });
   }
+  */
 
   /*
   cadastrarEstudante() {

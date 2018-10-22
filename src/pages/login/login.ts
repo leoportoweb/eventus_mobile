@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -11,7 +10,7 @@ export class LoginPage {
   login: any;
   senha: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController) {
+  constructor(private toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {

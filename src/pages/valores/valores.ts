@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
 import { EventoProvider } from '../../providers/evento/evento';
 import { CategoriaProvider } from '../../providers/categoria/categoria';
 import { Util } from '../../app/util';
 
-@IonicPage()
 @Component({
   selector: 'page-valores',
   templateUrl: 'valores.html',
@@ -17,7 +16,7 @@ export class ValoresPage {
   cod_evento_eve: any;
   datas: string[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private eventoProvider: EventoProvider, private categoriaProvider: CategoriaProvider, public loadindCtrl: LoadingController) {
+  constructor(private eventoProvider: EventoProvider, private categoriaProvider: CategoriaProvider, public loadindCtrl: LoadingController) {
     this.loading = loadindCtrl.create({
       content: "Aguarde...",
       duration: 3000
