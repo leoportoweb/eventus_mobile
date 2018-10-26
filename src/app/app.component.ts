@@ -1,7 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, Events  } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Network } from '@ionic-native/network';
+import { NetworkProvider } from '../providers/network/network';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -19,7 +21,12 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public events: Events,
+    public network: Network,
+    public networkProvider: NetworkProvider) {
 
     //chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 
@@ -40,6 +47,20 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      this.networkProvider.initializeNetworkEvents();
+      
+      // Offline event
+      this.events.subscribe('network:offline', () => {
+        //alert('network:offline ==> ' + this.network.type);
+        //console.log('network:' + this.network.type);
+      });
+
+      // Online event
+      this.events.subscribe('network:online', () => {
+        //alert('network:online ==> ' + this.network.type);
+        //console.log('network:' + this.network.type);
+      });
     });
   }
 

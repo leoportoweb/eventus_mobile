@@ -15,18 +15,42 @@
   </p>
   -->
 
+  <p *ngIf="endereco">
+    Logradouro: {{endereco}}
+  </p>
+
+  <p *ngIf="erro">
+    Erro: {{erro}}
+  </p>
+
+  <p *ngIf="usuarios">
+    Nome: {{usuarios[0].nom_usuario_usr}}
+  </p>
+
+  <p *ngIf="usuarios2">
+    Nome2: {{usuarios[0].nom_usuario_usr}}
+  </p>
+
+  <p *ngIf="responseEvento">
+    Status: {{responseEvento.status}}
+    <br />
+    OK: {{responseEvento.ok}}
+    <br />
+    Url: {{responseEvento.url}} <br />
+  </p>
+
   <ion-list>
 
     <ion-card *ngFor="let evento of eventos">
 
       <!--
-  <ion-item class="card-format-title">
-    <ion-avatar item-start>
-      <img src="https://evesix.insix.com.br/img/evento/{{evento.cod_evento_eve}}.jpg">
-    </ion-avatar>
-    <h2>{{evento.des_evento_eve}}</h2>
-  </ion-item>
-  -->
+      <ion-item class="card-format-title">
+        <ion-avatar item-start>
+          <img src="https://evesix.insix.com.br/img/evento/{{evento.cod_evento_eve}}.jpg">
+        </ion-avatar>
+        <h2>{{evento.des_evento_eve}}</h2>
+      </ion-item>
+      -->
 
       <ion-card-content class="card-format-title">
         <h2>

@@ -30,7 +30,6 @@ export class EventoProvider {
     return this.http.get(url, { headers: headers }).toPromise();
   }
 
-  /*
   listarEndereco(cep: number) {
     let url = "https://viacep.com.br/ws/" + cep + "/json/";
     let headers = new Headers();
@@ -40,6 +39,7 @@ export class EventoProvider {
     return this.http.get(url, { headers: headers }).toPromise();
   }
 
+  /*
   cadastrarEstudante(postData: any) {
     let url = localStorage.getItem("urlAPI") + "/api/students/post";
     let key = Util.gerarChaveAPI("/api/students/post");
