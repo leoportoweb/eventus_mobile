@@ -15,11 +15,11 @@ import { Subscription } from 'rxjs/Subscription';
 export class HomePage {
 
   //teste: any;
-  cepDigitado: number;
-  endereco: any;
+  //cepDigitado: number;
+  //endereco: any;
 
-  usuarios: any;
-  usuarios2: any;
+  //usuarios: any;
+  //usuarios2: any;
   erro: any;
   responseEvento: any;
 
@@ -60,8 +60,9 @@ export class HomePage {
 
     this.loading.dismiss();
 
-    this.buscarEndereco();
+    //this.buscarEndereco();
 
+    /*
     this.usuarioProvider.listarUsuario().then((response) => {
       this.usuarios = response.json();
     }).catch((err) => {
@@ -73,6 +74,7 @@ export class HomePage {
     }).catch((err) => {
       this.erro = err;
     });
+    */
   }
 
   ionViewDidEnter() {
@@ -120,6 +122,7 @@ export class HomePage {
     toast.present();
   }
 
+  /*
   buscarEndereco() {
     this.cepDigitado = 40140020;
     this.eventoProvider.listarEndereco(this.cepDigitado).then((response) => {
@@ -132,6 +135,7 @@ export class HomePage {
       //console.log(err);
     });
   }
+  */
 
   /*
   cadastrarEstudante() {

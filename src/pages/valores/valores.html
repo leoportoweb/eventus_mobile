@@ -5,9 +5,14 @@
 </ion-header>
 
 <ion-content>
+
+  <p style="padding-left: 5px; font-size: 1.3em; text-align: center;">
+    {{des_evento_eve}}
+  </p>
+
   <ion-list *ngFor="let data of datas;let i=index" style="margin-bottom: 20px;">
     <ion-list-header style="margin-top: 0px; font-size: 2em; background-color: #800000; padding-top: 0;">
-      <span style="font-size: 0.5em; color: #cecece;">Inscrições até:</span><br />
+      <span style="font-size: 0.5em; color: #cecece;">Inscrições até:</span><br/>
       {{data}}
     </ion-list-header>
     <!--<ion-item *ngFor="let categoria of categorias">{{categoria.des_categoria_ctg}}</ion-item>-->

@@ -14,6 +14,7 @@ export class ValoresPage {
   evento: any;
   categorias: any;
   cod_evento_eve: any;
+  des_evento_eve: any;
   datas: string[];
 
   constructor(private eventoProvider: EventoProvider, private categoriaProvider: CategoriaProvider, public loadindCtrl: LoadingController) {
@@ -31,6 +32,8 @@ export class ValoresPage {
       this.evento = response.json();
       console.log(this.evento);
 
+      this.des_evento_eve = this.evento.des_evento_eve;
+
       this.datas = [];
 
       var dataAtual = new Date();
@@ -40,16 +43,16 @@ export class ValoresPage {
         //console.log(Util.formatDate(this.evento.dat_inscricao1_eve, 'pt-br'));
         this.datas.push(Util.formatDate(this.evento.dat_inscricao1_eve, 'pt-br'));
       }
-      if (this.evento.dat_inscricao2_eve != null) {
+      if (this.evento.dat_inscricao2_eve != null && this.evento.dat_inscricao2_eve > dataAtual) {
         this.datas.push(Util.formatDate(this.evento.dat_inscricao2_eve, 'pt-br'));
       }
-      if (this.evento.dat_inscricao3_eve != null) {
+      if (this.evento.dat_inscricao3_eve != null && this.evento.dat_inscricao3_eve > dataAtual) {
         this.datas.push(Util.formatDate(this.evento.dat_inscricao3_eve, 'pt-br'));
       }
-      if (this.evento.dat_inscricao4_eve != null) {
+      if (this.evento.dat_inscricao4_eve != null && this.evento.dat_inscricao4_eve > dataAtual) {
         this.datas.push(Util.formatDate(this.evento.dat_inscricao4_eve, 'pt-br'));
       }
-      if (this.evento.dat_inscricao5_eve != null) {
+      if (this.evento.dat_inscricao5_eve != null && this.evento.dat_inscricao5_eve > dataAtual) {
         this.datas.push(Util.formatDate(this.evento.dat_inscricao5_eve, 'pt-br'));
       }
 
