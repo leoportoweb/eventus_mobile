@@ -36,11 +36,17 @@ export class ValoresPage {
 
       this.datas = [];
 
-      var dataAtual = new Date();
+      var dataAtual = Util.getDateFormatted();
+
+      //console.log(this.evento.dat_inscricao1_eve);
+      //console.log(Util.formatDate(this.evento.dat_inscricao1_eve, 'pt-br'));
+      //console.log(this.evento.dat_inscricao2_eve);
+      //console.log(Util.formatDate(this.evento.dat_inscricao2_eve, 'pt-br'));
+      //console.log(this.evento.dat_inscricao3_eve);
+      //console.log(Util.formatDate(this.evento.dat_inscricao3_eve, 'pt-br'));
+      //console.log(Util.getDateFormatted());
 
       if (this.evento.dat_inscricao1_eve != null && this.evento.dat_inscricao1_eve > dataAtual) {
-        //console.log(this.evento.dat_inscricao1_eve);
-        //console.log(Util.formatDate(this.evento.dat_inscricao1_eve, 'pt-br'));
         this.datas.push(Util.formatDate(this.evento.dat_inscricao1_eve, 'pt-br'));
       }
       if (this.evento.dat_inscricao2_eve != null && this.evento.dat_inscricao2_eve > dataAtual) {

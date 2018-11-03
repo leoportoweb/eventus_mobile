@@ -3,7 +3,6 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\assets",
     "\\src\\pages",
     "\\src\\pages\\home",
     "\\src\\pages\\valores",
@@ -11,6 +10,6 @@
     "\\src\\providers\\evento",
     "\\src\\providers\\usuario"
   ],
-  "SelectedNode": "\\src\\providers\\evento\\evento.ts",
+  "SelectedNode": "\\config.xml",
   "PreviewInSolutionExplorer": false
 }

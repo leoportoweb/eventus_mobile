@@ -64,4 +64,11 @@ export class Util {
     }
   }
 
+  static getDateFormatted() {
+    function pad(s) { return (s < 10) ? '0' + s : s; }
+    var dataAtual = new Date();
+    //return [pad(dataAtual.getDate()), pad(dataAtual.getMonth() + 1), dataAtual.getFullYear()].join('/');
+    return [dataAtual.getFullYear(), pad(dataAtual.getMonth() + 1), pad(dataAtual.getDate())].join('-');
+  }
+
 }
