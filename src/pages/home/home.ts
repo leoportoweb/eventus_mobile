@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController, ToastController } from 'ionic-angular';
 import { Network } from '@ionic-native/network';
 import { EventoProvider } from '../../providers/evento/evento';
-import { UsuarioProvider } from '../../providers/usuario/usuario';
+//import { UsuarioProvider } from '../../providers/usuario/usuario';
 //import { Util } from '../../app/util';
 import { LoginPage } from '../login/login';
 import { ValoresPage } from '../valores/valores';
@@ -32,7 +32,6 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
     private eventoProvider: EventoProvider,
-    private usuarioProvider: UsuarioProvider,
     private network: Network,
     public loadindCtrl: LoadingController,
     private toastCtrl: ToastController) {

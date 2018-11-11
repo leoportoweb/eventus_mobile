@@ -7,22 +7,16 @@
 </ion-header>
 
 
-<ion-content padding>
-  
+<ion-content>
+  <p style="padding-left: 5px; font-size: 1.3em; text-align: center;">
+    {{des_evento_eve}}
+  </p>
+  <img src="https://evesix.insix.com.br/img/evento/{{nom_img_card}}" />
   <ion-list>
     <ion-item>
-      <ion-label floating>Login</ion-label>
-      <ion-input type="text" [(ngModel)]="login"></ion-input>
-    </ion-item>
-    <ion-item>
       <ion-label floating>Senha</ion-label>
-      <ion-input type="password" [(ngModel)]="senha"></ion-input>
-    </ion-item>
-    <ion-item>
-
+      <ion-input type="password" [(ngModel)]="des_senha_inscricao_eve"></ion-input>
     </ion-item>
   </ion-list>
-
   <button ion-button color="danger" block (click)="acessar();">Acessar</button>
-
 </ion-content>

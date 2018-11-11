@@ -30,6 +30,17 @@ export class EventoProvider {
     return this.http.get(url, { headers: headers }).toPromise();
   }
 
+  acessoAdmin(postData: any) {
+    let url = localStorage.getItem("urlAPI") + "/api/Evento/AcessoAdmin";
+    let key = Util.gerarChaveAPI("/api/Evento/AcessoAdmin");
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append("Accept", 'application/json');
+    headers.append('Authorization', 'Bearer ' + key);
+
+    return this.http.post(url, postData, { headers: headers }).toPromise();
+  }
+
   listarEndereco(cep: number) {
     let url = "https://viacep.com.br/ws/" + cep + "/json/";
     let headers = new Headers();

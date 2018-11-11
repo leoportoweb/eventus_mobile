@@ -4,12 +4,12 @@
     "\\src",
     "\\src\\app",
     "\\src\\pages",
-    "\\src\\pages\\home",
+    "\\src\\pages\\login",
     "\\src\\pages\\valores",
     "\\src\\providers",
     "\\src\\providers\\evento",
     "\\src\\providers\\usuario"
   ],
-  "SelectedNode": "\\config.xml",
+  "SelectedNode": "\\src\\pages\\login\\login.html",
   "PreviewInSolutionExplorer": false
 }

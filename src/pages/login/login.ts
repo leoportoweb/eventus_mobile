@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { EventoProvider } from '../../providers/evento/evento';
+import { LoadingController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
+import { Util } from '../../app/util';
 
 @Component({
   selector: 'page-login',
@@ -7,28 +10,64 @@ import { ToastController } from 'ionic-angular';
 })
 export class LoginPage {
 
-  login: any;
-  senha: any;
+  loading: any;
 
-  constructor(private toastCtrl: ToastController) {
+  err: any;
+  evento: any;
+  cod_evento_eve: any;
+  des_evento_eve: any;
+  nom_img_card: any;
+  des_senha_inscricao_eve: any;
+
+  constructor(private eventoProvider: EventoProvider, public loadindCtrl: LoadingController, private toastCtrl: ToastController) {
+    this.loading = loadindCtrl.create({
+      content: "Aguarde...",
+      duration: 3000
+    });
+    this.loading.present();
+
+    this.cod_evento_eve = localStorage.getItem("cod_evento_eve");
   }
 
   ionViewDidLoad() {
+    this.eventoProvider.consultarEvento(this.cod_evento_eve).then((response) => {
+      this.evento = response.json();
+      //console.log(this.evento);
 
+      this.des_evento_eve = this.evento.des_evento_eve;
+      this.nom_img_card = this.evento.nom_img_card;
+    }).catch((err) => {
+      console.log(err);
+    });
+
+    this.loading.dismiss();
   }
 
   acessar() {
-    //console.log("login: " + this.login);
-    //console.log("senha: " + this.senha);
+    //console.log("senha: " + this.des_senha_inscricao_eve);
 
-    if (this.login == null || this.login.toString() == "") {
-      this.presentToast("Informe o login!");
-      return;
-    }
-    if (this.senha == null || this.senha.toString() == "") {
+    if (this.des_senha_inscricao_eve == null || this.des_senha_inscricao_eve.toString() == "") {
       this.presentToast("Informe a senha!");
       return;
     }
+
+    let postData = {
+      "cod_evento_eve": this.cod_evento_eve,
+      "des_senha_inscricao_eve": this.des_senha_inscricao_eve
+    }
+
+    this.eventoProvider.acessoAdmin(postData).then((response) => {
+      //console.log(response);
+      //console.log("status " + response.status);
+    }).catch((err) => {
+      //console.log(err);
+      //console.log("status " + err.status);
+      if (err.status === 400) {
+        this.err = err.json();
+        //console.log(this.err);
+        this.presentToast(this.err.MENSAGEM);
+      }
+    });
   }
 
   presentToast(msg: string) {
