@@ -4,12 +4,11 @@
     "\\src",
     "\\src\\app",
     "\\src\\pages",
+    "\\src\\pages\\home",
+    "\\src\\pages\\inscricao-total",
     "\\src\\pages\\login",
-    "\\src\\pages\\valores",
-    "\\src\\providers",
-    "\\src\\providers\\evento",
-    "\\src\\providers\\usuario"
+    "\\src\\providers"
   ],
-  "SelectedNode": "\\src\\pages\\login\\login.html",
+  "SelectedNode": "\\src\\pages\\inscricao-total\\inscricao-total.scss",
   "PreviewInSolutionExplorer": false
 }

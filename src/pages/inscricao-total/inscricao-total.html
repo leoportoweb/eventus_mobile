@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Total de Inscrições</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <p style="padding-left: 5px; font-size: 1.3em; text-align: center;">
+    {{des_evento_eve}}
+  </p>
+  <br /><br />
+  <div style="background-color: #800000; margin-left:5px; margin-right:5px; padding: 30px 10px 30px 10px; font-size: 1.8em; text-align: left; color: #cecece;">
+    Inscritos:
+    <br />
+    <span style="padding-left: 25px; font-size: 2.5em; color: #fff;">
+      {{total_qtd_inscritos}}
+    </span>
+  </div>
+  <div style="background-color: #800000; margin-top:5px; margin-bottom:20px; margin-left:5px; margin-right:5px; padding: 30px 10px 30px 10px; font-size: 1.8em; text-align: left; color: #cecece;">
+    Arrecadação (R$):
+    <br />
+    <span style="padding-left: 25px; font-size: 2.5em; color: #fff;">
+      {{total_val_total | number : '1.2'}}
+    </span>
+  </div>
+  <button ion-button color="danger" block (click)="totalPorCategoria();">Total por Categoria</button>
+</ion-content>

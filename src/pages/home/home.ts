@@ -107,7 +107,7 @@ export class HomePage {
 
   displayNetworkUpdate(connectionState: string) {
     let networkType = this.network.type;
-    this.presentToast('You are now ' + connectionState + ' via ' + networkType.toString());
+    //this.presentToast('You are now ' + connectionState + ' via ' + networkType.toString());
   }
 
   presentToast(msg: string) {

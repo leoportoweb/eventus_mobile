@@ -7,8 +7,9 @@ import { NetworkProvider } from '../providers/network/network';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-//import { LoginPage } from '../pages/login/login';
-//import { ValoresPage } from '../pages/valores/valores';
+import { LoginPage } from '../pages/login/login';
+import { InscricaoTotalPage } from '../pages/inscricao-total/inscricao-total';
+import { CategoriaTotalPage } from '../pages/categoria-total/categoria-total';
 
 @Component({
   templateUrl: 'app.html'
@@ -36,7 +37,9 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Total de Inscrições', component: InscricaoTotalPage },
+      { title: 'Total por Categoria', component: CategoriaTotalPage },
+      { title: 'Logout', component: LoginPage }
     ];
 
   }

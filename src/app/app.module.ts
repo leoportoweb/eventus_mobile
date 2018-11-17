@@ -11,10 +11,13 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { ValoresPage } from '../pages/valores/valores';
+import { InscricaoTotalPage } from '../pages/inscricao-total/inscricao-total';
+import { CategoriaTotalPage } from '../pages/categoria-total/categoria-total';
 
 import { EventoProvider } from '../providers/evento/evento';
 import { CategoriaProvider } from '../providers/categoria/categoria';
 import { UsuarioProvider } from '../providers/usuario/usuario';
+import { InscricaoOnLineProvider } from '../providers/inscricao-on-line/inscricao-on-line';
 import { NetworkProvider } from '../providers/network/network';
 
 import { registerLocaleData } from '@angular/common';
@@ -28,7 +31,9 @@ registerLocaleData(localePt, 'pt');
     HomePage,
     ListPage,
     LoginPage,
-    ValoresPage
+    ValoresPage,
+    InscricaoTotalPage,
+    CategoriaTotalPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,9 @@ registerLocaleData(localePt, 'pt');
     HomePage,
     ListPage,
     LoginPage,
-    ValoresPage
+    ValoresPage,
+    InscricaoTotalPage,
+    CategoriaTotalPage
   ],
   providers: [
     StatusBar,
@@ -52,7 +59,8 @@ registerLocaleData(localePt, 'pt');
     EventoProvider,
     CategoriaProvider,
     UsuarioProvider,
-    NetworkProvider
+    NetworkProvider,
+    InscricaoOnLineProvider
   ]
 })
 export class AppModule {}

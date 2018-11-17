@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { EventoProvider } from '../../providers/evento/evento';
-import { LoadingController } from 'ionic-angular';
-import { ToastController } from 'ionic-angular';
-import { Util } from '../../app/util';
+import { NavController, LoadingController, ToastController } from 'ionic-angular';
+import { InscricaoTotalPage } from '../../pages/inscricao-total/inscricao-total';
 
 @Component({
   selector: 'page-login',
@@ -19,7 +18,11 @@ export class LoginPage {
   nom_img_card: any;
   des_senha_inscricao_eve: any;
 
-  constructor(private eventoProvider: EventoProvider, public loadindCtrl: LoadingController, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController,
+    private eventoProvider: EventoProvider,
+    public loadindCtrl: LoadingController,
+    private toastCtrl: ToastController) {
+
     this.loading = loadindCtrl.create({
       content: "Aguarde...",
       duration: 3000
@@ -59,6 +62,7 @@ export class LoginPage {
     this.eventoProvider.acessoAdmin(postData).then((response) => {
       //console.log(response);
       //console.log("status " + response.status);
+      this.navCtrl.setRoot(InscricaoTotalPage);
     }).catch((err) => {
       //console.log(err);
       //console.log("status " + err.status);
