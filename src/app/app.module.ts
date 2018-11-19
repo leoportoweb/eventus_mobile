@@ -13,6 +13,8 @@ import { LoginPage } from '../pages/login/login';
 import { ValoresPage } from '../pages/valores/valores';
 import { InscricaoTotalPage } from '../pages/inscricao-total/inscricao-total';
 import { CategoriaTotalPage } from '../pages/categoria-total/categoria-total';
+import { CursoTotalPage } from '../pages/curso-total/curso-total';
+import { ExtraTotalPage } from '../pages/extra-total/extra-total';
 
 import { EventoProvider } from '../providers/evento/evento';
 import { CategoriaProvider } from '../providers/categoria/categoria';
@@ -33,7 +35,9 @@ registerLocaleData(localePt, 'pt');
     LoginPage,
     ValoresPage,
     InscricaoTotalPage,
-    CategoriaTotalPage
+    CategoriaTotalPage,
+    CursoTotalPage,
+    ExtraTotalPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,9 @@ registerLocaleData(localePt, 'pt');
     LoginPage,
     ValoresPage,
     InscricaoTotalPage,
-    CategoriaTotalPage
+    CategoriaTotalPage,
+    CursoTotalPage,
+    ExtraTotalPage
   ],
   providers: [
     StatusBar,

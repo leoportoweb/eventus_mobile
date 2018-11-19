@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { EventoProvider } from '../../providers/evento/evento';
-import { CategoriaProvider } from '../../providers/categoria/categoria';
 import { InscricaoOnLineProvider } from '../../providers/inscricao-on-line/inscricao-on-line';
-import { Util } from '../../app/util';
 
 @Component({
   selector: 'page-categoria-total',

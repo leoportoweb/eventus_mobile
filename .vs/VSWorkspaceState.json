@@ -4,11 +4,14 @@
     "\\src",
     "\\src\\app",
     "\\src\\pages",
-    "\\src\\pages\\home",
+    "\\src\\pages\\categoria-total",
+    "\\src\\pages\\curso-total",
+    "\\src\\pages\\extra-total",
     "\\src\\pages\\inscricao-total",
-    "\\src\\pages\\login",
-    "\\src\\providers"
+    "\\src\\providers",
+    "\\src\\providers\\categoria",
+    "\\src\\providers\\inscricao-on-line"
   ],
-  "SelectedNode": "\\src\\pages\\inscricao-total\\inscricao-total.scss",
+  "SelectedNode": "\\config.xml",
   "PreviewInSolutionExplorer": false
 }

@@ -10,8 +10,8 @@ export class UsuarioProvider {
   }
 
   listarUsuario() {
-    let url = localStorage.getItem("urlAPI") + "/api/usuario";
-    let key = Util.gerarChaveAPI("/api/usuario");
+    let url = localStorage.getItem("urlAPI") + "/api/usuario/get";
+    let key = Util.gerarChaveAPI("/api/usuario/get");
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', 'Bearer ' + key);
@@ -20,7 +20,7 @@ export class UsuarioProvider {
   }
 
   listarUsuario2() {
-    let url = localStorage.getItem("urlAPI") + "/api/usuario";
+    let url = localStorage.getItem("urlAPI") + "/api/usuario/get";
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 

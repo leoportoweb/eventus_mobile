@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { EventoProvider } from '../../providers/evento/evento';
 import { InscricaoOnLineProvider } from '../../providers/inscricao-on-line/inscricao-on-line';
-import { CategoriaTotalPage } from '../../pages/categoria-total/categoria-total';
 
 @Component({
   selector: 'page-inscricao-total',
@@ -64,9 +63,5 @@ export class InscricaoTotalPage {
 
     this.loading.dismiss();
   }
-
-  totalPorCategoria() {
-    this.navCtrl.setRoot(CategoriaTotalPage);
-  }
-
+  
 }

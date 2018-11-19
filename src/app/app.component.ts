@@ -10,6 +10,8 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { InscricaoTotalPage } from '../pages/inscricao-total/inscricao-total';
 import { CategoriaTotalPage } from '../pages/categoria-total/categoria-total';
+import { CursoTotalPage } from '../pages/curso-total/curso-total';
+import { ExtraTotalPage } from '../pages/extra-total/extra-total';
 
 @Component({
   templateUrl: 'app.html'
@@ -39,6 +41,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Total de Inscrições', component: InscricaoTotalPage },
       { title: 'Total por Categoria', component: CategoriaTotalPage },
+      { title: 'Total por Curso', component: CursoTotalPage },
+      { title: 'Total por Extra', component: ExtraTotalPage },
       { title: 'Logout', component: LoginPage }
     ];
 

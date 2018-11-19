@@ -11,8 +11,8 @@ export class EventoProvider {
   }
 
   listarEventos() {
-    let url = localStorage.getItem("urlAPI") + "/api/evento";
-    let key = Util.gerarChaveAPI("/api/evento");
+    let url = localStorage.getItem("urlAPI") + "/api/evento/get";
+    let key = Util.gerarChaveAPI("/api/evento/get");
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', 'Bearer ' + key);
@@ -21,8 +21,8 @@ export class EventoProvider {
   }
 
   consultarEvento(cod_evento_eve: string) {
-    let url = localStorage.getItem("urlAPI") + "/api/evento/" + cod_evento_eve;
-    let key = Util.gerarChaveAPI("/api/evento");
+    let url = localStorage.getItem("urlAPI") + "/api/evento/get/" + cod_evento_eve;
+    let key = Util.gerarChaveAPI("/api/evento/get");
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', 'Bearer ' + key);
