@@ -8,13 +8,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { ValoresPage } from '../pages/valores/valores';
 import { InscricaoTotalPage } from '../pages/inscricao-total/inscricao-total';
 import { CategoriaTotalPage } from '../pages/categoria-total/categoria-total';
 import { CursoTotalPage } from '../pages/curso-total/curso-total';
 import { ExtraTotalPage } from '../pages/extra-total/extra-total';
+import { AdminHomePage } from '../pages/admin-home/admin-home';
 
 import { EventoProvider } from '../providers/evento/evento';
 import { CategoriaProvider } from '../providers/categoria/categoria';
@@ -31,13 +31,13 @@ registerLocaleData(localePt, 'pt');
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     LoginPage,
     ValoresPage,
     InscricaoTotalPage,
     CategoriaTotalPage,
     CursoTotalPage,
-    ExtraTotalPage
+    ExtraTotalPage,
+    AdminHomePage
   ],
   imports: [
     BrowserModule,
@@ -48,13 +48,13 @@ registerLocaleData(localePt, 'pt');
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     LoginPage,
     ValoresPage,
     InscricaoTotalPage,
     CategoriaTotalPage,
     CursoTotalPage,
-    ExtraTotalPage
+    ExtraTotalPage,
+    AdminHomePage
   ],
   providers: [
     StatusBar,

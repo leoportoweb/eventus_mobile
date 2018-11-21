@@ -6,12 +6,12 @@ import { Network } from '@ionic-native/network';
 import { NetworkProvider } from '../providers/network/network';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { InscricaoTotalPage } from '../pages/inscricao-total/inscricao-total';
 import { CategoriaTotalPage } from '../pages/categoria-total/categoria-total';
 import { CursoTotalPage } from '../pages/curso-total/curso-total';
 import { ExtraTotalPage } from '../pages/extra-total/extra-total';
+import { AdminHomePage } from '../pages/admin-home/admin-home';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,8 +19,9 @@ import { ExtraTotalPage } from '../pages/extra-total/extra-total';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  //rootPage: any = HomePage;
   //rootPage: any = LoginPage;
+  rootPage: any = AdminHomePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -68,6 +69,9 @@ export class MyApp {
         //alert('network:online ==> ' + this.network.type);
         //console.log('network:' + this.network.type);
       });
+
+      localStorage.setItem("cod_evento_eve", "1225");
+
     });
   }
 

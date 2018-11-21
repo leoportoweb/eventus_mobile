@@ -3,15 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\assets\\fonts",
     "\\src\\pages",
-    "\\src\\pages\\categoria-total",
-    "\\src\\pages\\curso-total",
-    "\\src\\pages\\extra-total",
-    "\\src\\pages\\inscricao-total",
-    "\\src\\providers",
-    "\\src\\providers\\categoria",
-    "\\src\\providers\\inscricao-on-line"
+    "\\src\\pages\\admin-home",
+    "\\src\\pages\\home",
+    "\\src\\pages\\inscricao-total"
   ],
-  "SelectedNode": "\\config.xml",
+  "SelectedNode": "\\src\\pages\\home\\home.html",
   "PreviewInSolutionExplorer": false
 }
