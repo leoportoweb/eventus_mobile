@@ -19,9 +19,9 @@ import { AdminHomePage } from '../pages/admin-home/admin-home';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  //rootPage: any = HomePage;
+  rootPage: any = HomePage;
   //rootPage: any = LoginPage;
-  rootPage: any = AdminHomePage;
+  //rootPage: any = AdminHomePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -70,7 +70,8 @@ export class MyApp {
         //console.log('network:' + this.network.type);
       });
 
-      localStorage.setItem("cod_evento_eve", "1225");
+      //*** para testes
+      //localStorage.setItem("cod_evento_eve", "1225");
 
     });
   }

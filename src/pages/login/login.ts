@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { EventoProvider } from '../../providers/evento/evento';
 import { NavController, LoadingController, ToastController } from 'ionic-angular';
-import { InscricaoTotalPage } from '../../pages/inscricao-total/inscricao-total';
+import { AdminHomePage } from '../../pages/admin-home/admin-home';
 
 @Component({
   selector: 'page-login',
@@ -62,7 +62,7 @@ export class LoginPage {
     this.eventoProvider.acessoAdmin(postData).then((response) => {
       //console.log(response);
       //console.log("status " + response.status);
-      this.navCtrl.setRoot(InscricaoTotalPage);
+      this.navCtrl.setRoot(AdminHomePage);
     }).catch((err) => {
       //console.log(err);
       //console.log("status " + err.status);
