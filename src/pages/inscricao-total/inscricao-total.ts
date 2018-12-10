@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { EventoProvider } from '../../providers/evento/evento';
 import { InscricaoOnLineProvider } from '../../providers/inscricao-on-line/inscricao-on-line';
+import { LoginPage } from '../../pages/login/login';
 
 @Component({
   selector: 'page-inscricao-total',
@@ -29,6 +30,8 @@ export class InscricaoTotalPage {
     this.loading.present();
 
     this.cod_evento_eve = localStorage.getItem("cod_evento_eve");
+
+    this.validarAcesso();
   }
 
   ionViewDidLoad() {
@@ -62,6 +65,12 @@ export class InscricaoTotalPage {
     });
 
     this.loading.dismiss();
+  }
+
+  validarAcesso() {
+    if (localStorage.getItem("controle_acesso") === "0") {
+      this.navCtrl.setRoot(LoginPage);
+    }
   }
   
 }

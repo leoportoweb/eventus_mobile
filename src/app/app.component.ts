@@ -12,6 +12,7 @@ import { CategoriaTotalPage } from '../pages/categoria-total/categoria-total';
 import { CursoTotalPage } from '../pages/curso-total/curso-total';
 import { ExtraTotalPage } from '../pages/extra-total/extra-total';
 import { AdminHomePage } from '../pages/admin-home/admin-home';
+import { UserHomePage } from '../pages/user-home/user-home';
 
 @Component({
   templateUrl: 'app.html'

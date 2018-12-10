@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { EventoProvider } from '../../providers/evento/evento';
-import { HomePage } from '../../pages/home/home';
+import { UserHomePage } from '../user-home/user-home';
 import { LoginPage } from '../../pages/login/login';
 import { InscricaoTotalPage } from '../../pages/inscricao-total/inscricao-total';
 import { CategoriaTotalPage } from '../../pages/categoria-total/categoria-total';
@@ -30,6 +30,8 @@ export class AdminHomePage {
     this.loading.present();
 
     this.cod_evento_eve = localStorage.getItem("cod_evento_eve");
+
+    this.validarAcesso();
   }
 
   ionViewDidLoad() {
@@ -44,7 +46,7 @@ export class AdminHomePage {
 
   irPara(opt: number) {
     console.log(opt);
-    if(opt === 1)
+    if (opt === 1)
       this.navCtrl.push(InscricaoTotalPage);
     else if (opt === 2)
       this.navCtrl.push(CategoriaTotalPage);
@@ -52,10 +54,20 @@ export class AdminHomePage {
       this.navCtrl.push(CursoTotalPage);
     else if (opt === 4)
       this.navCtrl.push(ExtraTotalPage);
-    else if (opt === 5)
-      this.navCtrl.push(LoginPage);
-    else if (opt === 6)
-      this.navCtrl.push(HomePage);
+    else if (opt === 5) {
+      this.cod_evento_eve = localStorage.setItem("controle_acesso", "0");
+      this.navCtrl.setRoot(LoginPage);
+    }
+    else if (opt === 6) {
+      this.cod_evento_eve = localStorage.setItem("controle_acesso", "0");
+      this.navCtrl.setRoot(UserHomePage);
+    }
+  }
+
+  validarAcesso() {
+    if (localStorage.getItem("controle_acesso") === "0") {
+      this.navCtrl.setRoot(LoginPage);
+    }
   }
 
 }

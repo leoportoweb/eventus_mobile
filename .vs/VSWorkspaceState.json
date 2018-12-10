@@ -3,12 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\assets\\fonts",
     "\\src\\pages",
     "\\src\\pages\\admin-home",
-    "\\src\\pages\\home",
-    "\\src\\pages\\inscricao-total"
+    "\\src\\pages\\login"
   ],
-  "SelectedNode": "\\src\\pages\\home\\home.html",
+  "SelectedNode": "\\config.xml",
   "PreviewInSolutionExplorer": false
 }

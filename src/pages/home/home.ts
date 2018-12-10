@@ -4,9 +4,10 @@ import { Network } from '@ionic-native/network';
 import { EventoProvider } from '../../providers/evento/evento';
 //import { UsuarioProvider } from '../../providers/usuario/usuario';
 //import { Util } from '../../app/util';
+import { UserHomePage } from '../user-home/user-home';
 import { LoginPage } from '../login/login';
-import { ValoresPage } from '../valores/valores';
 import { Subscription } from 'rxjs/Subscription';
+import { isNumber } from 'ionic-angular/util/util';
 
 @Component({
   selector: 'page-home',
@@ -26,6 +27,7 @@ export class HomePage {
   response: any;
   eventos: any;
   loading: any;
+  cod_evento_eve: any;
 
   connected: Subscription;
   disconnected: Subscription;
@@ -46,16 +48,26 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    this.eventoProvider.listarEventos().then((response) => {
-      this.responseEvento = response;
-      console.log(response);
-      this.eventos = response.json();
-      //console.log(this.eventos);
-      //console.log(this.estudantes[0].FirstName);
-    }).catch((err) => {
-      //console.log(err);
-      this.presentToast(err);
-    });
+
+    this.cod_evento_eve = localStorage.getItem("cod_evento_eve");
+
+    //console.log("cod_evento_eve: " + this.cod_evento_eve);
+
+    if (!isNaN(this.cod_evento_eve)) {
+      //console.log("cod_evento_eve: " + this.cod_evento_eve);
+      this.navCtrl.setRoot(UserHomePage);
+    } else {
+      this.eventoProvider.listarEventos().then((response) => {
+        this.responseEvento = response;
+        //console.log(response);
+        this.eventos = response.json();
+        //console.log(this.eventos);
+        //console.log(this.estudantes[0].FirstName);
+      }).catch((err) => {
+        //console.log(err);
+        this.presentToast(err);
+      });
+    }
 
     this.loading.dismiss();
 
@@ -96,7 +108,7 @@ export class HomePage {
   irParaInscricao(cod_evento_eve: number) {
     //console.log(cod_evento_eve);
     localStorage.setItem("cod_evento_eve", cod_evento_eve.toString());
-    this.navCtrl.push(ValoresPage);
+    this.navCtrl.push(UserHomePage);
   }
 
   irParaAcessoRestrito(cod_evento_eve: number) {

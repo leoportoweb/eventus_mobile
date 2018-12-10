@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { EventoProvider } from '../../providers/evento/evento';
 import { NavController, LoadingController, ToastController } from 'ionic-angular';
 import { AdminHomePage } from '../../pages/admin-home/admin-home';
+import { UserHomePage } from '../../pages/user-home/user-home';
 
 @Component({
   selector: 'page-login',
@@ -43,6 +44,8 @@ export class LoginPage {
       console.log(err);
     });
 
+    localStorage.setItem("controle_acesso", "0");
+
     this.loading.dismiss();
   }
 
@@ -62,6 +65,7 @@ export class LoginPage {
     this.eventoProvider.acessoAdmin(postData).then((response) => {
       //console.log(response);
       //console.log("status " + response.status);
+      localStorage.setItem("controle_acesso", "1");
       this.navCtrl.setRoot(AdminHomePage);
     }).catch((err) => {
       //console.log(err);
@@ -72,6 +76,10 @@ export class LoginPage {
         this.presentToast(this.err.MENSAGEM);
       }
     });
+  }
+
+  voltar() {
+    this.navCtrl.setRoot(UserHomePage);
   }
 
   presentToast(msg: string) {
