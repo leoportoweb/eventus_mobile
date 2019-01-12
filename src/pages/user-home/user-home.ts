@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { EventoProvider } from '../../providers/evento/evento';
 import { ValoresPage } from '../valores/valores';
+import { ValoresCursoPage } from '../valores-curso/valores-curso';
+import { ValoresExtraPage } from '../valores-extra/valores-extra';
 import { LoginPage } from '../login/login';
 import { HomePage } from '../home/home';
 
@@ -45,10 +47,10 @@ export class UserHomePage {
       this.navCtrl.push(ValoresPage);
     //else if (opt === 2)
     //  this.navCtrl.push(CategoriaTotalPage);
-    //else if (opt === 3)
-    //  this.navCtrl.push(CursoTotalPage);
-    //else if (opt === 4)
-    //  this.navCtrl.push(ExtraTotalPage);
+    else if (opt === 3)
+      this.navCtrl.push(ValoresCursoPage);
+    else if (opt === 4)
+      this.navCtrl.push(ValoresExtraPage);
     //else if (opt === 5)
     //  this.navCtrl.push(LoginPage);
     else if (opt === 6)

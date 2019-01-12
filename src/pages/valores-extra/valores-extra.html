@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Valores - Extras</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <p style="padding-left: 5px; font-size: 1.3em; text-align: center;">
+    {{des_evento_eve}}
+  </p>
+
+  <ion-list *ngFor="let data of datas;let i=index" style="margin-bottom: 20px;">
+    <ion-list-header style="margin-top: 0px; font-size: 2em; background-color: #800000; padding-top: 0;">
+      <span style="font-size: 0.5em; color: #cecece;">Inscrições até:</span><br/>
+      {{data}}
+    </ion-list-header>
+    <span *ngIf="i == 0">
+      <ion-card *ngFor="let extra of extras" style="background-color: #222222;">
+        <ion-card-content style="color: #fff;" *ngIf="extra.valor1 > 0">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-8>{{extra.des_extra_ext}}</ion-col>
+              <ion-col col-4 style="text-align: right">{{extra.valor1 | currency : 'BRL' : '1.2'}} </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </span>
+    <span *ngIf="i == 1">
+      <ion-card *ngFor="let extra of extras" style="background-color: #222222;">
+        <ion-card-content style="color: #fff;" *ngIf="extra.valor2 > 0">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-8>{{extra.des_extra_ext}}</ion-col>
+              <ion-col col-4 style="text-align: right">{{extra.valor2 | currency : 'BRL' : '1.2'}} </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </span>
+    <span *ngIf="i == 2">
+      <ion-card *ngFor="let extra of extras" style="background-color: #222222;">
+        <ion-card-content style="color: #fff;" *ngIf="extra.valor3 > 0">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-8>{{extra.des_extra_ext}}</ion-col>
+              <ion-col col-4 style="text-align: right">{{extra.valor3 | currency : 'BRL' : '1.2'}} </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </span>
+    <span *ngIf="i == 3">
+      <ion-card *ngFor="let extra of extras" style="background-color: #222222;">
+        <ion-card-content style="color: #fff;" *ngIf="extra.valor4 > 0">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-8>{{extra.des_extra_ext}}</ion-col>
+              <ion-col col-4 style="text-align: right">{{extra.valor4 | currency : 'BRL' : '1.2'}} </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </span>
+    <span *ngIf="i == 4">
+      <ion-card *ngFor="let extra of extras" style="background-color: #222222;">
+        <ion-card-content style="color: #fff;" *ngIf="extra.valor5 > 0">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-8>{{extra.des_extra_ctg}}</ion-col>
+              <ion-col col-4 style="text-align: right">{{extra.valor5 | currency : 'BRL' : '1.2'}} </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </span>
+  </ion-list>
+</ion-content>

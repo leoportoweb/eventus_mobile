@@ -10,6 +10,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { ValoresPage } from '../pages/valores/valores';
+import { ValoresCursoPage } from '../pages/valores-curso/valores-curso';
+import { ValoresExtraPage } from '../pages/valores-extra/valores-extra';
 import { InscricaoTotalPage } from '../pages/inscricao-total/inscricao-total';
 import { CategoriaTotalPage } from '../pages/categoria-total/categoria-total';
 import { CursoTotalPage } from '../pages/curso-total/curso-total';
@@ -22,6 +24,8 @@ import { CategoriaProvider } from '../providers/categoria/categoria';
 import { UsuarioProvider } from '../providers/usuario/usuario';
 import { InscricaoOnLineProvider } from '../providers/inscricao-on-line/inscricao-on-line';
 import { NetworkProvider } from '../providers/network/network';
+import { CursoProvider } from '../providers/curso/curso';
+import { ExtraProvider } from '../providers/extra/extra';
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
@@ -34,6 +38,8 @@ registerLocaleData(localePt, 'pt');
     HomePage,
     LoginPage,
     ValoresPage,
+    ValoresCursoPage,
+    ValoresExtraPage,
     InscricaoTotalPage,
     CategoriaTotalPage,
     CursoTotalPage,
@@ -52,6 +58,8 @@ registerLocaleData(localePt, 'pt');
     HomePage,
     LoginPage,
     ValoresPage,
+    ValoresCursoPage,
+    ValoresExtraPage,
     InscricaoTotalPage,
     CategoriaTotalPage,
     CursoTotalPage,
@@ -69,7 +77,9 @@ registerLocaleData(localePt, 'pt');
     CategoriaProvider,
     UsuarioProvider,
     NetworkProvider,
-    InscricaoOnLineProvider
+    InscricaoOnLineProvider,
+    CursoProvider,
+    ExtraProvider
   ]
 })
 export class AppModule {}
